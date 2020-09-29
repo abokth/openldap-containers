@@ -25,6 +25,7 @@ FROM fedora:latest
 RUN yum -y update
 RUN yum -y install openldap-servers
 RUN systemctl enable slapd
+VOLUME ["/var/lib/ldap", "/var/log/journal"]
 EXPOSE 389/tcp
 EXPOSE 636/tcp
 
